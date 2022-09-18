@@ -31,7 +31,6 @@
         </li>
 
         {{-- USERS  --}}
-
         @if(Auth::user()->role == 'Admin')
         <li class="treeview {{ ($prefix == '/users')?'active':'' }} ">
           <a href="#">
@@ -49,8 +48,7 @@
         @endif
 
         {{-- PROFILE  --}}
-
-        <li class="treeview {{ ($prefix == '/profile')?'active':'' }}">
+       <li class="treeview {{ ($prefix == '/profile')?'active':'' }}">
           <a href="#">
             <i data-feather="mail"></i> <span>Manage Profile</span>
             <span class="pull-right-container">
@@ -64,7 +62,6 @@
         </li>
 
          {{-- SETUP  --}}
-
         <li class="treeview {{ ($prefix == '/setups')?'active':'' }}">
           <a href="#">
             <i data-feather="credit-card"></i> <span>Setup Management</span>
@@ -87,8 +84,7 @@
         </li>
 
         {{-- STUDENT  --}}
-
-       <li class="treeview {{ ($prefix == '/students')?'active':'' }}">
+<li class="treeview {{ ($prefix == '/students')?'active':'' }}">
           <a href="#">
              <i data-feather="hard-drive"></i></i> <span>Student Management</span>
             <span class="pull-right-container">
@@ -105,7 +101,6 @@
         </li>
 
          {{-- EMPLOYEE  --}}
-
 <li class="treeview {{ ($prefix == '/employees')?'active':'' }}">
           <a href="#">
             <i data-feather="package"></i> <span>Employee Management</span>
@@ -122,6 +117,25 @@
           </ul>
         </li>
 
+            {{-- STUDENT MARKS  --}}
+<li class="treeview {{ ($prefix == '/marks')?'active':'' }}">
+          <a href="#">
+             <i data-feather="edit-2"></i> <span> Marks Management</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+        <li class="{{ ($route == 'marks.entry.add')?'active':'' }}"><a href="{{ route('marks.entry.add') }}"><i class="ti-more"></i>Marks Entry</a></li>
+       <li class="{{ ($route == 'marks.entry.edit')?'active':'' }}"><a href="{{ route('marks.entry.edit') }}"><i class="ti-more"></i>Marks Edit</a></li>
+
+     {{--  <li class="{{ ($route == 'marks.entry.grade')?'active':'' }}"><a href="{{ route('marks.entry.grade') }}"><i class="ti-more"></i>Marks Grade</a></li> --}}
+
+
+          </ul>
+        </li>
+
+                {{-- USER INTERFACE  --}}
         <li class="header nav-small-cap">User Interface</li>
 
         <li class="treeview">
