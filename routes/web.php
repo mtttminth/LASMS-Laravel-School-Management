@@ -23,6 +23,7 @@ use App\Http\Controllers\Backend\Setup\AssignSubjectController;
 use App\Http\Controllers\Backend\Setup\SchoolSubjectController;
 use App\Http\Controllers\Backend\Student\StudentRollController;
 use App\Http\Controllers\Backend\Employee\EmployeeRegController;
+use App\Http\Controllers\Backend\Account\AccountSalaryController;
 use App\Http\Controllers\Backend\Employee\EmployeeLeaveController;
 use App\Http\Controllers\Backend\Employee\MonthlySalaryController;
 use App\Http\Controllers\Backend\Employee\EmployeeSalaryController;
@@ -363,6 +364,7 @@ Route::group(['middleware' => 'auth'], function () {
     /// Account Management Routes
     Route::prefix('accounts')->group(function () {
 
+        // Student Fee Routes
         Route::get('student/fee/view', [StudentFeeController::class, 'StudentFeeView'])->name('student.fee.view');
 
         Route::get('student/fee/add', [StudentFeeController::class, 'StudentFeeAdd'])->name('student.fee.add');
@@ -370,5 +372,14 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('student/fee/getstudent', [StudentFeeController::class, 'StudentFeeGetStudent'])->name('account.fee.getstudent');
 
         Route::post('student/fee/store', [StudentFeeController::class, 'StudentFeeStore'])->name('account.fee.store');
+
+        // Employee Salary Routes
+        Route::get('account/salary/view', [AccountSalaryController::class, 'AccountSalaryView'])->name('account.salary.view');
+
+        Route::get('account/salary/add', [AccountSalaryController::class, 'AccountSalaryAdd'])->name('account.salary.add');
+
+        Route::get('account/salary/getemployee', [AccountSalaryController::class, 'AccountSalaryGetEmployee'])->name('account.salary.getemployee');
+
+        Route::post('account/salary/store', [AccountSalaryController::class, 'AccountSalaryStore'])->name('account.salary.store');
     });
 }); // End Middlware Auth Route
