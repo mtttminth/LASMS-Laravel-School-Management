@@ -39,7 +39,7 @@
     <td><h2>LASMS</h2>
 <p>School Address</p>
 <p>Phone : 343434343434</p>
-<p>Email : support@easylerningbd.com</p>
+<p>Email : support@lasms.com</p>
 <p> <b> Employee Registration Page </b> </p>
     </td>
   </tr>
