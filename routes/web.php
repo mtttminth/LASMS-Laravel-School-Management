@@ -22,6 +22,7 @@ use App\Http\Controllers\Backend\Setup\StudentGroupController;
 use App\Http\Controllers\Backend\Setup\StudentShiftController;
 use App\Http\Controllers\Backend\Student\MonthlyFeeController;
 use App\Http\Controllers\Backend\Student\StudentRegController;
+use App\Http\Controllers\Backend\Report\AttendReportController;
 use App\Http\Controllers\Backend\Setup\AssignSubjectController;
 use App\Http\Controllers\Backend\Setup\SchoolSubjectController;
 use App\Http\Controllers\Backend\Student\StudentRollController;
@@ -411,5 +412,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('marksheet/generate/view', [MarkSheetController::class, 'MarkSheetView'])->name('marksheet.generate.view');
 
         Route::get('marksheet/generate/get', [MarkSheetController::class, 'MarkSheetGet'])->name('report.marksheet.get');
+
+        // Attendance Report Routes
+        Route::get('attendance/report/view', [AttendReportController::class, 'AttendReportView'])->name('attendance.report.view');
+
+        Route::get('report/attendance/get', [AttendReportController::class, 'AttendReportGet'])->name('report.attendance.get');
     });
 }); // End Middlware Auth Route

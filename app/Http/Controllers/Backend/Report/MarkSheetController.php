@@ -33,7 +33,6 @@ class MarkSheetController extends Controller
         $class_id = $request->class_id;
         $exam_type_id = $request->exam_type_id;
         $id_no = $request->id_no;
-        $data['image'] = StudentMarks::where('id_no', $id_no)->get();
 
 
         $count_fail = StudentMarks::where('year_id', $year_id)->where('class_id', $class_id)->where('exam_type_id', $exam_type_id)->where('id_no', $id_no)->where('marks', '<', '20')->get()->count();
@@ -41,14 +40,15 @@ class MarkSheetController extends Controller
         $singleStudent = StudentMarks::where('year_id', $year_id)->where('class_id', $class_id)->where('exam_type_id', $exam_type_id)->where('id_no', $id_no)->first();
         if ($singleStudent == true) {
 
+            $studentImage = StudentMarks::where('id_no', $id_no)->get();
             $allMarks = StudentMarks::with(['assign_subject', 'year'])->where('year_id', $year_id)->where('class_id', $class_id)->where('exam_type_id', $exam_type_id)->where('id_no', $id_no)->get();
             // dd($allMarks->toArray());
             $allGrades = MarksGrade::all();
-            return view('backend.report.marksheet.marksheet_pdf', $data, compact('allMarks', 'allGrades', 'count_fail'));
+            return view('backend.report.marksheet.marksheet_pdf',  compact('studentImage', 'allMarks', 'allGrades', 'count_fail'));
         } else {
 
             $notification = array(
-                'message' => 'Sorry These Criteria Donse not match',
+                'message' => 'Sorry These Criteria Does not match',
                 'alert-type' => 'error'
             );
 

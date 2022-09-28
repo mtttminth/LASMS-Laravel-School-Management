@@ -23,7 +23,7 @@
 
 
   <div class="row">  <!-- start 1st row -->
-    @foreach($image as $key => $value )
+    @foreach($studentImage as $key => $value )
   		<div style="float: right" class="col-md-2 text-center">
    <img src="{{ (!empty($value['student']['image']))? url('upload/student_images/'.$value['student']['image']):url('upload/no_image.jpg') }}" style="width: 120px; height: 100px;">
   		</div>
