@@ -11,6 +11,15 @@
     <title>LASMS - Registration </title>
 
 	<!-- Vendors Style-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="{{ asset('backend/css/vendors_css.css') }}">
+
+	<!-- Style-->
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <link rel="stylesheet" href=" https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+
 	<link rel="stylesheet" href="{{asset ('backend/css/vendors_css.css') }}">
 
 	<!-- Style-->
@@ -77,21 +86,11 @@
 									</div>
 									<!-- /.col -->
 									<div class="col-12 text-center">
-									  <button type="submit" class="btn btn-info btn-rounded margin-top-10">SIGN IN</button>
+									  <button type="submit" class="btn btn-info btn-rounded mt-10">SIGN UP</button>
 									</div>
 									<!-- /.col -->
 								  </div>
 							</form>
-
-							<div class="text-center text-white">
-							  <p class="mt-20">- Register With -</p>
-							  <p class="gap-items-2 mb-20">
-								  <a class="btn btn-social-icon btn-round btn-outline btn-white" href="#"><i class="fa fa-facebook"></i></a>
-								  <a class="btn btn-social-icon btn-round btn-outline btn-white" href="#"><i class="fa fa-twitter"></i></a>
-								  <a class="btn btn-social-icon btn-round btn-outline btn-white" href="#"><i class="fa fa-google-plus"></i></a>
-								  <a class="btn btn-social-icon btn-round btn-outline btn-white" href="#"><i class="fa fa-instagram"></i></a>
-								</p>
-							</div>
 
 							<div class="text-center">
 								<p class="mt-15 mb-0 text-white">Already have an account?<a href="{{ route('login') }}" class="text-danger ml-5"> Sign In</a></p>
