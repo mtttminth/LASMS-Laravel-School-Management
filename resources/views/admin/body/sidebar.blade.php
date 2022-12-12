@@ -23,7 +23,7 @@
 
 		<li class="{{ ($route == 'dashboard')?'active':'' }}">
           <a href="{{ route('dashboard') }}">
-            <i data-feather="pie-chart"></i>
+            <i class="fa-solid fa-gauge"></i>
 			<span>Dashboard</span>
           </a>
         </li>
@@ -32,7 +32,7 @@
         @if(Auth::user()->role == 'Admin')
         <li class="treeview {{ ($prefix == '/users')?'active':'' }} ">
           <a href="#">
-            <i data-feather="message-circle"></i>
+           <i class="fa-regular fa-user"></i>
             <span>Manage User</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
@@ -48,7 +48,8 @@
         {{-- PROFILE  --}}
        <li class="treeview {{ ($prefix == '/profile')?'active':'' }}">
           <a href="#">
-            <i data-feather="mail"></i> <span>Manage Profile</span>
+          <i class="fa-solid fa-users-viewfinder"></i>
+            <span>Manage Profile</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -62,7 +63,7 @@
          {{-- SETUP  --}}
         <li class="treeview {{ ($prefix == '/setups')?'active':'' }}">
           <a href="#">
-            <i data-feather="credit-card"></i> <span>Setup Management</span>
+            <i class="fa-solid fa-wrench"></i> <span>Setup Management</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -84,7 +85,8 @@
         {{-- STUDENT  --}}
 <li class="treeview {{ ($prefix == '/students')?'active':'' }}">
           <a href="#">
-             <i data-feather="hard-drive"></i></i> <span>Student Management</span>
+            <i class="fa-solid fa-user-graduate"></i>
+             <span>Student Management</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -101,7 +103,7 @@
          {{-- EMPLOYEE  --}}
 <li class="treeview {{ ($prefix == '/employees')?'active':'' }}">
           <a href="#">
-            <i data-feather="package"></i> <span>Employee Management</span>
+            <i class="fa-solid fa-user-tie"></i> <span>Employee Management</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -118,7 +120,7 @@
             {{-- STUDENT MARKS  --}}
 <li class="treeview {{ ($prefix == '/marks')?'active':'' }}">
           <a href="#">
-             <i data-feather="edit-2"></i> <span> Marks Management</span>
+             <i class="fa-solid fa-check"></i> <span> Marks Management</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -135,7 +137,7 @@
             {{-- ACCOUNTS  --}}
         <li class="treeview {{ ($prefix == '/accounts')?'active':'' }}">
           <a href="#">
-            <i data-feather="inbox"></i> <span> Accounts Management</span>
+            <i class="fa-regular fa-address-card"></i> <span> Accounts Management</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -152,7 +154,8 @@
 
        <li class="treeview {{ ($prefix == '/reports')?'active':'' }}">
           <a href="#">
-            <i data-feather="server"></i></i> <span> Reports Management</span>
+            <i class="fa-solid fa-chart-simple"></i>
+             <span> Reports Management</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>

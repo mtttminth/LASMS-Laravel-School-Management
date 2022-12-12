@@ -1,7 +1,11 @@
 <header class="main-header">
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top pl-30">
-	  <div></div>
+	  <div>
+			<a href="#" class="waves-effect waves-light nav-link rounded svg-bt-icon" data-toggle="push-menu" role="button">
+					<i class="fa-solid fa-bars"></i>
+			    </a>
+                </div>
       <div class="navbar-custom-menu r-side">
         <ul class="nav navbar-nav">
 
