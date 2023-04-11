@@ -11,9 +11,8 @@ class UserController extends Controller
 {
     public function UserView()
     {
-        // $allData = User::all();
-        $data['allData'] = User::all();
-        return view('backend.user.view_user', $data);
+        $allData['allData'] = User::all();
+        return view('backend.user.view_user', $allData);
     }
 
     public function UserAdd()

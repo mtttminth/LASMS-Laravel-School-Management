@@ -10,9 +10,9 @@ class AdminController extends Controller
 {
     public function Index()
     {
-        $data['userCount'] = User::count();
-
-        return view('admin.index', compact($data));
+        $studentCount = User::where('usertype', '=', 'Student')->count();
+        $employeeCount = User::where('usertype', '=', 'Employee')->count();
+        return view('admin.index', compact('studentCount', 'employeeCount'));
     }
 
     public function Logout()

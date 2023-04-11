@@ -15,7 +15,7 @@
 							</div>
 							<div>
 								<p class="text-mute mt-20 mb-0 font-size-16">Students</p>
-								<h3 class="text-white mb-0 font-weight-500">9 <small class="text-success"></small></h3>
+								<h3 class="text-white mb-0 font-weight-500">{{ $studentCount }}<small class="text-success"></small></h3>
 							</div>
 						</div>
 					</div>
@@ -28,7 +28,7 @@
 							</div>
 							<div>
 								<p class="text-mute mt-20 mb-0 font-size-16">Employees</p>
-								<h3 class="text-white mb-0 font-weight-500">2 <small class="text-success"></small></h3>
+								<h3 class="text-white mb-0 font-weight-500">{{ $employeeCount }}<small class="text-success"></small></h3>
 							</div>
 						</div>
 					</div>

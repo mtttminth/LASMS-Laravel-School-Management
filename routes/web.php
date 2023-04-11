@@ -56,12 +56,13 @@ Route::group(['middleware' => 'prevent-back-history'], function () {
         config('jetstream.auth_session'),
         'verified'
     ])->group(function () {
-        Route::get('/dashboard', function () {
-            return view('admin.index');
-        })->name('dashboard');
+        Route::get('/dashboard', [AdminController::class, 'Index'])
+            ->name('dashboard');
     });
 
-    Route::get('/admin/logout', [AdminController::class, 'Logout'])->name('admin.logout');
+
+    Route::get('/admin/logout', [AdminController::class, 'Logout'])
+        ->name('admin.logout');
 
     Route::group(['middleware' => 'auth'], function () {
 
@@ -69,12 +70,18 @@ Route::group(['middleware' => 'prevent-back-history'], function () {
 
         Route::prefix('users')->group(function () {
 
-            Route::get('/view', [UserController::class, 'UserView'])->name('user.view');
-            Route::get('/add', [UserController::class, 'UserAdd'])->name('users.add');
-            Route::post('/store', [UserController::class, 'UserStore'])->name('users.store');
-            Route::get('/edit/{id}', [UserController::class, 'UserEdit'])->name('users.edit');
-            Route::post('/update/{id}', [UserController::class, 'UserUpdate'])->name('users.update');
-            Route::get('/delete/{id}', [UserController::class, 'UserDelete'])->name('users.delete');
+            Route::get('/view', [UserController::class, 'UserView'])
+                ->name('user.view');
+            Route::get('/add', [UserController::class, 'UserAdd'])
+                ->name('users.add');
+            Route::post('/store', [UserController::class, 'UserStore'])
+                ->name('users.store');
+            Route::get('/edit/{id}', [UserController::class, 'UserEdit'])
+                ->name('users.edit');
+            Route::post('/update/{id}', [UserController::class, 'UserUpdate'])
+                ->name('users.update');
+            Route::get('/delete/{id}', [UserController::class, 'UserDelete'])
+                ->name('users.delete');
         });
 
         /// User Profile and Change Password
